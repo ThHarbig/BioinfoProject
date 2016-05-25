@@ -1,6 +1,8 @@
 from xml.dom.minidom import parse, parseString
 
-def createDict(data):
+
+def parseXML(file):
+    data = parse(file)
     chains = data.getElementsByTagName("CHAIN")
     alphaSequences = []
     for chain in chains:
@@ -16,5 +18,4 @@ def createDict(data):
 
 
 if __name__ == "__main__":
-    data = parse('pdbtmall.xml')
-    print(createDict(data))
+    print(parseXML('pdbtmall.xml'))
